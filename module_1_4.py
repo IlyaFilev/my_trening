@@ -1,0 +1,7 @@
+my_string = input('как настроение?')
+print(my_string)
+my_string = input(('как настроение?').upper())
+my_string = input(('как настроение?').lower())
+my_string = input(('как настроение?').replace(' ',''))
+print(my_string[0])
+print(my_string[-1])
