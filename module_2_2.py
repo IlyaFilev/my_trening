@@ -1,6 +1,6 @@
 first = input('Привет, сравним три числа - введи первое целое число: ')
 second = input('введи ещё одно целое число: ')
-third = input('тре целое число: ')
+third = input('третье целое число: ')
 rez = 'Совпадений:'
 if first == second and second == third:
     print(rez, '3')
