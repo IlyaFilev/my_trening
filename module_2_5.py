@@ -14,6 +14,7 @@ def get_matrix(n, m, value):
 Result_1 = get_matrix(2, 2, 88)
 print(Result_1)
 
+
 Result_2 = get_matrix(3, 5, 0.5)
 print(Result_2)
 
