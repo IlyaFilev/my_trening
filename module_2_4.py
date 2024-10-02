@@ -9,7 +9,7 @@ for i in numbers:
     if i == 1:
         continue
     else:
-        for j in range(2, i): # 2 не проверяется, True не меняется => добавляется в primes
+        for j in range(2, int(i**0.5) + 1): # 2 не проверяется, True не меняется => добавляется в primes
             if i % j == 0:
                 is_prime = False
                 break   # останавливаем, иначе след значение i может перещёлкнуть переменную
