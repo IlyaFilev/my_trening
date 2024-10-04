@@ -18,12 +18,11 @@ def is_contains(string, list_to_search):
     else:
         return False
 
-print(string_info('Armageddon'))
+
+print(string_info('CapybarA'))
 print(string_info('Armageddon'))
 print(string_info('Spaceship'))
-print(string_info('Cosmopoliten'))
 print(is_contains('Urban', ['UrBaN', 'qwe']))
 print(is_contains('Batut', ['Yakibana', 'BaNaN', 'BAtUT']))
 print(is_contains('Orang', ['Oran', 'BaNaN', 'Аpple']))
-
 print(calls)
