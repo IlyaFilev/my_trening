@@ -12,7 +12,8 @@ def string_info(string):
 
 def is_contains(string, list_to_search):
     count_calls()
-    if string in list_to_search:
+    list_to_search_m = [x.lower() for x in list_to_search]
+    if string.lower() in list_to_search_m:
         return True
     else:
         return False
@@ -21,7 +22,8 @@ print(string_info('Armageddon'))
 print(string_info('Armageddon'))
 print(string_info('Spaceship'))
 print(string_info('Cosmopoliten'))
-print(is_contains('Urban', ['ban', 'BaNaN', 'Urban'])) # Urban ~ urBAN
-print(is_contains('batut', ['Yakibana', 'BaNaN', 'BAtUT']))
+print(is_contains('Urban', ['UrBaN', 'qwe']))
+print(is_contains('Batut', ['Yakibana', 'BaNaN', 'BAtUT']))
+print(is_contains('Orang', ['Oran', 'BaNaN', 'Аpple']))
 
 print(calls)
