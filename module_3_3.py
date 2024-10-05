@@ -1,10 +1,10 @@
 # "Распаковка позиционных параметров"
 def print_params(a = 1, b = 'строка', c = True):
     print(a,b,c)
+
 values_list = [35, 5.05, 'Строка']
 values_dict = {'a':1, "b":7.77, "c":'abc'}
 values_list_2 = [88, 'String']
-
 
 print_params()
 print_params(8,8,8)
