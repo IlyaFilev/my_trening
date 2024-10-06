@@ -18,7 +18,7 @@ print(result2)
 def single_root_words(root_word, *other_words):
     same_words=[]
     for i in range(len(other_words)):
-        counter = other_words[i].lower().count(root_word.lower())
+        counter = other_words[i].lower().count(root_word.lower()) or root_word.lower().count(other_words[i].lower())
         if counter > 0:
             same_words.append(other_words[i])
 
