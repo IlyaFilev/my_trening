@@ -7,6 +7,7 @@ def get_multiplied_digits(number):
     else: # При преобразовании строки(str) в число(int) первые нули убираются. int('00123') -> 123.
         return first*get_multiplied_digits(int(str_number[1:]))
 
+
 result = (get_multiplied_digits(50505))
 print(result)
 
