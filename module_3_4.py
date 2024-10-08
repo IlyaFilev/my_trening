@@ -1,4 +1,4 @@
-# Произвольное число параметров - "Однокоренные"
+#  Произвольное число параметров - "Однокоренные"
 def single_root_words(root_word, *other_words):
     same_words = []
     for i in range(len(other_words)):
@@ -13,7 +13,7 @@ result2 = (single_root_words('Cline', 'Inclination', 'Incline', 'recline'))
 print(result2)
 
 
-# с оператором count()
+#  с оператором count()
 def single_root_words(root_word, *other_words):
     same_words = []
     for i in range(len(other_words)):
