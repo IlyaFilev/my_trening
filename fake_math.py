@@ -5,6 +5,3 @@ def divide(first, second):
         return x
     else:
         return "Ошибка"
-
-
-#print(divide(5, 0))
