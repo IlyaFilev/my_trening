@@ -7,6 +7,3 @@ def divide(first, second):
     else:
         # second = inf
         return inf
-
-
-#print(divide(5, 0))
