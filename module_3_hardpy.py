@@ -7,12 +7,7 @@ def calculate_structure_sum(lst):
         if isinstance(item, int):
             total += item           # подсчет цифр
         elif isinstance(item, str):
-            for i in item:
-                if i.isdigit(): # поиск числа в строке
-                    a = int(i)  # если найдено, то меняем тип со строки на целое число
-                    total += a     # подсчет цифр, найденных в строке
-                else:
-                    total += 1     # подсчет строк
+            total += len(item)
         elif isinstance(item, list):
             total += calculate_structure_sum(item)
         elif isinstance(item, set):
