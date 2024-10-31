@@ -1,3 +1,4 @@
+# "Зачем нужно наследование"
 class Animal:
     alive = True  # живой
     fed = False  # накормленный
