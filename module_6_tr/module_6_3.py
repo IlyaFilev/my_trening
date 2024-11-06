@@ -41,7 +41,3 @@ p1.move(-5, 20)
 print(p1.get_pos())
 
 p1.voice()
-
-# print(p1.__dict__)
-# print(dir(p1))
-# print(id(p1))
