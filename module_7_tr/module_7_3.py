@@ -19,22 +19,22 @@ class WordsFinder:
     def find(self, word):
         find = {}
         for elem in self.get_all_words().items():
-            s = 0
+            position = 0
             for i in elem[1]:
-                s += 1
+                position += 1
                 if word.lower() == i:
-                    find.update({elem[0]: s})
+                    find.update({elem[0]: position})
                     break
         return find
 
     def count(self, word):
         count = {}
         for elem in self.get_all_words().items():
-            s = 0
+            counter = 0
             for i in elem[1]:
                 if word.lower() == i:
-                    s += 1
-                    count.update({elem[0]: s})
+                    counter += 1
+                    count.update({elem[0]: counter})
         return count
 
 
