@@ -39,6 +39,6 @@ p3 = Product('Potato', 5.5, 'Vegetables')
 
 print(p2)  # __str__
 
-s1.add(p1, p2, p3)
+s1.add(p1, p2, p3) # !!! Сначала запускаем добавку -> Создаем файл!
 
-print(s1.get_products())
+print(s1.get_products()) # Затем уже его читаем
