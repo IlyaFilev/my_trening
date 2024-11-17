@@ -2,6 +2,8 @@
 import os
 import time
 
+print('Текущая директория:', os.getcwd())
+print('-' * 30)
 for root, dirs, files in os.walk('.'):
     for file in files:
         filepath = os.path.join(root, file)
