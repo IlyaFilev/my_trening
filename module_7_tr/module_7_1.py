@@ -22,13 +22,13 @@ class Shop:
         return data_products  # возврат строки с данными файла 'products.txt'
 
     def add(self, *products):
-        file = open(self.__file_name, 'a')  # при первом запуске в режиме appand будет создан файл 'products.txt'
-        for i in products:
-            t = str(i)  # объект класса Product в строковом представлении - для поиска в строке из метода get_products
-            if t in self.get_products():  # получение списка продуктов из файла и поиск Продукта в нем.
-                print(f'Продукт {t} уже есть в магазине')
+        file = open(self.__file_name, 'a') # при первом запуске в режиме appand будет создан файл products.txt
+        current_products = self.get_products() # Лучше открыть файл продуктов один раз перед циклом - ускорение работы.
+        for new_product in products:
+            if str(new_product) not in current_products: #получ. список прод. из файла и поиск new-Продукта в нем.
+                file.write(f'{new_product}\n')  # Добавление продуктов в список файла
             else:
-                file.write(f'{t}\n')  # Добавление продуктов в список файла
+                print(f'Продукт {new_product} уже есть в магазине')
         file.close()  # закрытие файла
 
 
