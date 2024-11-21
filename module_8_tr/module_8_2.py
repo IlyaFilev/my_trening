@@ -27,6 +27,6 @@ print(f'Результат 2: {calculate_average([1, "Строка", 3, "Ещё 
 print(f'Результат 3: {calculate_average(888)}') # Передана не коллекция
 print(f'Результат 4: {calculate_average([42, 15, 36, 13])}') # Всё должно работать
 try:
-    print(f'Результат 5: {calculate_average(стока)}')
+    print(f'Результат 5: {calculate_average(serv)}')
 except NameError:
-    print('Следи за тем, что вводишь, Бро!')
+    print('Ошибка ввода')
