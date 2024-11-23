@@ -2,26 +2,27 @@
 class IncorrectVinNumber(Exception):
     def __init__(self, message):
         self.message = message
-    pass
 
-class IncorrectCarNumbers(Exception): # Созданы 2 собственных класса исключений.
+
+class IncorrectCarNumbers(Exception):  # Созданы 2 собственных класса исключений.
     def __init__(self, message):
-        self.message = message # объекты этих классов имеют возможность вывести сообщение в консоль.
-    pass
+        self.message = message  # объекты этих классов имеют возможность вывести сообщение в консоль.
 
 
 class Car:
 
     def __init__(self, model, vin_number, numbers):
         self.model = model
-        if self.__is_valid_vin(vin_number): # перед созданием объекта, передаем vin на проверку методу __is_valid_vin(vin_number)
-            self.__vin = vin_number
-        if self.__is_valid_numbers(numbers):  # перед созданием объекта, проверяем vin
+        if self.__is_valid_vin(vin_number):  # перед созданием объекта, передаем vin на проверку по условиям
+            self.__vin = vin_number # Уровень доступа private
+        if self.__is_valid_numbers(numbers):  # перед созданием объекта, передаем numbers на проверку по условиям
             self.__numbers = numbers
 
     def __is_valid_vin(self, vin_number):
-        if not (isinstance(vin_number, int) and 1000000 <= vin_number <= 9999999):
-            raise IncorrectVinNumber('Неверный диапазон для vin номера')
+        if not (isinstance(vin_number, int) and 1000000 <= vin_number <= 9999999):  # проверяем vin по условиям
+            raise IncorrectVinNumber(
+                'Неверный диапазон для vin номера')  # генерируем исключение с сообщением (создается объект класса
+            # IncorrectVinNumber) которое отлавливаем в блоке try-except
         return True
 
     def __is_valid_numbers(self, numbers):
@@ -30,11 +31,10 @@ class Car:
         return True
 
 
-
 try:
     first = Car('Model1', 1000000, 'f123dj')
 except IncorrectVinNumber as exc:
-    print(exc.message)
+    print(exc.message)  # выводится переданное сообщение об ошибке
 except IncorrectCarNumbers as exc:
     print(exc.message)
 else:
