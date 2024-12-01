@@ -4,7 +4,7 @@ from shutil import which
 # Lambda-функция:
 first = 'Мама мыла раму'
 second = 'Рамена мало было'
-res_list = list(map(lambda x, y: x == y, first, second))
+res_list = list(map(lambda x, y: x == y, first, second)) # map: x[0]==y[0], x[1]==y[1], и далее по позициям
 print(res_list)
 
 # Замыкание:
@@ -12,7 +12,7 @@ def get_advanced_writer(file_name):
     def write_everything(*data_set):
         with open(file_name, 'a', encoding='utf-8') as file:
             for i in data_set:
-                file.write(f'{str(i)}\n')
+                file.write(f'{str(i)}\n')  # данные любого типа конверт-м в строки и добавляем переход на след. стр.
 
     return write_everything
 
