@@ -8,7 +8,7 @@ class Iterator:
 
     def __init__(self, start, stop, step=1):
         self.start = start
-        self.pointer = start
+        self.pointer = 0
         self.stop = stop
         if step == 0:
             raise StepValueError(f'шаг не может быть равен 0')
@@ -19,11 +19,12 @@ class Iterator:
         return self
 
     def __next__(self):
-        if self.step < 0 and self.pointer < self.stop or self.step > 0 and self.pointer > self.stop:
+        if (self.step < 0 and self.pointer < self.stop) or (self.step > 0 and self.pointer > self.stop):
                 raise StopIteration
         else:
+            position = self.pointer
             self.pointer += self.step
-            return self.pointer
+            return position
 
 
 try:
@@ -36,17 +37,17 @@ except StepValueError:
 iter2 = Iterator(-5, 1)
 iter3 = Iterator(6, 15, 2)
 iter4 = Iterator(5, 1, -1)
-iter5 = Iterator(10, 1)
+iter5 = Iterator(0, -5, -1)
 
 for i in iter2:
     print(i, end=' ')
-print('II')
+print()
 for i in iter3:
     print(i, end=' ')
-print('III')
+print()
 for i in iter4:
     print(i, end=' ')
-print('IV')
+print()
 for i in iter5:
     print(i, end=' ')
-print('V')
+print()
