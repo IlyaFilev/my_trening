@@ -1,4 +1,4 @@
-'''Декораторы
+'''Декораторы - расширение функционала, без изменений основной функции.
 Задача:
 1. Функция, которая складывает 3 числа (sum_three)
 2. Функция декоратор (is_prime), которая распечатывает "Простое", если результат 1ой функции будет простым числом и
@@ -6,34 +6,20 @@
 '''
 
 def is_prime(func):
-    def wrapper(*args):
-        res = func(*args)
-        for j in range(2, int(res ** 0.5) + 1):
-            if res % j == 0:
-                print(res, 'Составное')
+    def wrapper(*args):     # передаем параметры основной функции: по условиям только 3 числа - достаточно только *args
+        res = func(*args)   # получаем результат основной функции в виде числа и далее проверяем его на простоту
+        for j in range(2, int(res**0.5) + 1):
+            if res % j == 0:                    # если найдется делитель отличный от 2 или self, то число Составное
+                return f'{res} Составное'
             else:
-                print(res, 'Простое')
+                return f'{res} Простое'
     return wrapper
 
 
-@is_prime
+@is_prime              # Применяем декоратор к функции - @ и имя функ. декоратора связывает sum_three = is_prime(func)
 def sum_three(*args):
-    summ = sum(args)
-    return summ
+    return sum(args)
 
 
-sum_three(1, 1, 1)
-
-'''
-def is_prime(func):
-    def wrapper(*args):
-        res_ = func(*args)
-        # if isinstance(res_, int):
-        for j in range(2, int(res_**0.5)+1):
-            if res_ % j == 0:
-                print(res_, 'Составное')
-            else:
-                print(res_, 'Простое')
-        
-    return wrapper
-'''
+result = sum_three(2, 1, 10)
+print(result)
