@@ -9,16 +9,16 @@ class Knight(threading.Thread):
         threading.Thread.__init__(self)
         self.name = name
         self.power = power
+        self.enemies = 100 # кол-во врагов - по усл.задачи у всех потоков = 100
 
     def run(self):
-        enemies = 100  # кол-во врагов - по усл.задачи = 100
         days = 0
         print(f'{self.name}, на нас напали!')
-        while enemies:
+        while self.enemies:
             time.sleep(1) # задержка в 1 секунду = 1 день
             days += 1
-            enemies -= int(self.power)
-            print(f'{self.name} сражается {days} дней, осталось {enemies} войнов.')
+            self.enemies -= self.power
+            print(f'{self.name} сражается {days} дней, осталось {self.enemies} войнов.')
         print(f'{self.name} одержал победу спустя {days} дней(дня)!')
 
 
