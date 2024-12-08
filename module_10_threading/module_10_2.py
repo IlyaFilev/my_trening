@@ -11,14 +11,14 @@ class Knight(threading.Thread):
         self.power = power
 
     def run(self):
-        Enemies = 100  # кол-во врагов - по усл.задачи = 100
+        enemies = 100  # кол-во врагов - по усл.задачи = 100
         days = 0
         print(f'{self.name}, на нас напали!')
-        while Enemies:
+        while enemies:
             time.sleep(1) # задержка в 1 секунду = 1 день
             days += 1
-            Enemies -= int(self.power)
-            print(f'{self.name} сражается {days} дней, осталось {Enemies} войнов.')
+            enemies -= int(self.power)
+            print(f'{self.name} сражается {days} дней, осталось {enemies} войнов.')
         print(f'{self.name} одержал победу спустя {days} дней(дня)!')
 
 
