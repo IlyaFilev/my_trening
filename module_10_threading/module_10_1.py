@@ -16,7 +16,7 @@ write_words(30, 'example2.txt')
 write_words(200, 'example3.txt')
 write_words(100, 'example4.txt')
 fin = time.time()
-print('Работа Функции', round(fin - start, 4)) # в миллисекундах Работа Функции: 34.1195
+print('Работа Функции', round(fin - start, 4)) # Работа Функции: 34.1195 секунд
 
 start2 = time.time()
 thread5 = threading.Thread(target=write_words, args=(10,'example5.txt'))
@@ -32,4 +32,4 @@ thread6.join()
 thread7.join()
 thread8.join()
 fin2 = time.time()
-print('Работа потоков', round(fin2 - start2, 4)) # Работа потоков 20.0641
+print('Работа потоков', round(fin2 - start2, 4)) # Работа потоков 20.0641 сек.
