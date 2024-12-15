@@ -5,7 +5,7 @@
 '''
 import multiprocessing
 import time
-from multiprocessing.managers import PoolProxy
+
 
 
 def read_info(name):
@@ -40,4 +40,4 @@ if __name__ == '__main__':
     fin2 = time.time() - start2
     print(f'время выполнения мультипроцессом: {round(fin2, 4)}c.')
 
-# время выполнения мультипроцессом: 1.4914c.
+# время выполнения мультипроцессом: 1.4068c.
